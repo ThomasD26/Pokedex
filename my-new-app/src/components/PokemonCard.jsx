@@ -1,19 +1,22 @@
+import PropTypes  from "prop-types"
+
+PokemonCard.propTypes = {
+  pokemon : PropTypes.shape({
+    name: PropTypes.string.isRequired,
+    imgSrc: PropTypes.string
+  }).isRequired,
+} 
 
 
-function PokemonCard(props) {
-      return <figure> 
-              {props.imgSrc? <img src= {props.imgSrc} alt={props.name}/> : <p>???</p>}
-              <figcaption>{props.name}</figcaption> 
-              </figure>
-  
-}  
+  function PokemonCard(props) {
+    console.log(props)
+    
+        return <figure> 
+                {props.pokemon.imgSrc? <img src= {props.pokemon.imgSrc} alt={props.pokemon.name}/> : <p>???</p>}
+                <figcaption>{props.pokemon.name}</figcaption> 
+            </figure>
+    
+}
 
-// function PokemonCard() {
-//     return <figure> 
-//         <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png"alt="Bulbisare"/>
-//         <figcaption>bulbasaur</figcaption> 
 
-//     </figure>
-// }
-
- export default PokemonCard;
+export default PokemonCard
